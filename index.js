@@ -1,14 +1,5 @@
 /* eslint-disable  func-names */
 /* eslint quote-props: ["error", "consistent"]*/
-/**
- * This sample demonstrates a simple skill built with the Amazon Alexa Skills
- * nodejs skill development kit.
- * This sample supports multiple lauguages. (en-US, en-GB, de-DE).
- * The Intent Schema, Custom Slots and Sample Utterances for this skill, as well
- * as testing instructions are located at https://github.com/alexa/skill-sample-nodejs-fact
- **/
-
-'use strict';
 
 const Alexa = require('alexa-sdk');
 
@@ -18,9 +9,9 @@ const languageStrings = {
     'en-GB': {
         translation: {
             FACTS: [
-                'A year on Mercury is just 88 days long.',
-                'Despite being farther from the Sun, Venus experiences higher temperatures than Mercury.',
-                'Venus rotates anti-clockwise, possibly because of a collision in the past with an asteroid.',
+                `Fullerton's sister cities are Yongin, South Korea, Fukui, Japan, and Morelia, Mexico.`,
+                `Fullerton is the headquarters of The Red Hat Society, which is described on their website as a playgroup for women created to connect like-minded women, make new friends and enrich lives through the power of fun and friendship!`,
+                `Fullerton was founded as a railroad town in 1887, and is named after George H Fullerton, after making a deal with the land's owners on behalf of California Central Railroad for railroad right-of-way.`,
                 'On Mars, the Sun appears about half the size as it does on Earth.',
                 'Earth is the only planet not named after a god.',
                 'Jupiter has the shortest day of all the planets.',
@@ -32,9 +23,9 @@ const languageStrings = {
                 'The temperature inside the Sun can reach 15 million degrees Celsius.',
                 'The Moon is moving approximately 3.8 cm away from our planet every year.',
             ],
-            SKILL_NAME: 'British Space Facts',
+            SKILL_NAME: 'British Fullerton, California Facts',
             GET_FACT_MESSAGE: "Here's your fact: ",
-            HELP_MESSAGE: 'You can say tell me a space fact, or, you can say exit... What can I help you with?',
+            HELP_MESSAGE: 'You can say tell me a fullerton fact, or, you can say exit... What can I help you with?',
             HELP_REPROMPT: 'What can I help you with?',
             STOP_MESSAGE: 'Goodbye!',
         },
@@ -42,9 +33,9 @@ const languageStrings = {
     'en-US': {
         translation: {
             FACTS: [
-                'A year on Mercury is just 88 days long.',
-                'Despite being farther from the Sun, Venus experiences higher temperatures than Mercury.',
-                'Venus rotates counter-clockwise, possibly because of a collision in the past with an asteroid.',
+                `Fullerton's sister cities are Yongin, South Korea, Fukui, Japan, and Morelia, Mexico.`,
+                `Fullerton is the headquarters of The Red Hat Society, a playgroup for women created to connect like-minded women, make new friends and enrich lives through the power of fun and friendship!`,
+                `Fullerton was founded as a railroad town in 1887, and is named after George H Fullerton, after making a deal with the land's owners on behalf of California Central Railroad for railroad right-of-way.`,
                 'On Mars, the Sun appears about half the size as it does on Earth.',
                 'Earth is the only planet not named after a god.',
                 'Jupiter has the shortest day of all the planets.',
@@ -56,37 +47,13 @@ const languageStrings = {
                 'The temperature inside the Sun can reach 15 million degrees Celsius.',
                 'The Moon is moving approximately 3.8 cm away from our planet every year.',
             ],
-            SKILL_NAME: 'American Space Facts',
+            SKILL_NAME: 'American Fullerton Facts',
             GET_FACT_MESSAGE: "Here's your fact: ",
-            HELP_MESSAGE: 'You can say tell me a space fact, or, you can say exit... What can I help you with?',
+            HELP_MESSAGE: 'You can say tell me a fullerton fact, or, you can say exit... What can I help you with?',
             HELP_REPROMPT: 'What can I help you with?',
             STOP_MESSAGE: 'Goodbye!',
         },
-    },
-    'de-DE': {
-        translation: {
-            FACTS: [
-                'Ein Jahr dauert auf dem Merkur nur 88 Tage.',
-                'Die Venus ist zwar weiter von der Sonne entfernt, hat aber höhere Temperaturen als Merkur.',
-                'Venus dreht sich entgegen dem Uhrzeigersinn, möglicherweise aufgrund eines früheren Zusammenstoßes mit einem Asteroiden.',
-                'Auf dem Mars erscheint die Sonne nur halb so groß wie auf der Erde.',
-                'Die Erde ist der einzige Planet, der nicht nach einem Gott benannt ist.',
-                'Jupiter hat den kürzesten Tag aller Planeten.',
-                'Die Milchstraßengalaxis wird in etwa 5 Milliarden Jahren mit der Andromeda-Galaxis zusammenstoßen.',
-                'Die Sonne macht rund 99,86 % der Masse im Sonnensystem aus.',
-                'Die Sonne ist eine fast perfekte Kugel.',
-                'Eine Sonnenfinsternis kann alle ein bis zwei Jahre eintreten. Sie ist daher ein seltenes Ereignis.',
-                'Der Saturn strahlt zweieinhalb mal mehr Energie in den Weltraum aus als er von der Sonne erhält.',
-                'Die Temperatur in der Sonne kann 15 Millionen Grad Celsius erreichen.',
-                'Der Mond entfernt sich von unserem Planeten etwa 3,8 cm pro Jahr.',
-            ],
-            SKILL_NAME: 'Weltraumwissen auf Deutsch',
-            GET_FACT_MESSAGE: 'Hier sind deine Fakten: ',
-            HELP_MESSAGE: 'Du kannst sagen, „Nenne mir einen Fakt über den Weltraum“, oder du kannst „Beenden“ sagen... Wie kann ich dir helfen?',
-            HELP_REPROMPT: 'Wie kann ich dir helfen?',
-            STOP_MESSAGE: 'Auf Wiedersehen!',
-        },
-    },
+    }
 };
 
 const handlers = {
