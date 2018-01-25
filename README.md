@@ -1,9 +1,36 @@
+# Fullerton Facts
+
+I'm evaluating various approaches to Alexa skill development so I can see what the developer experience is like and make recommendations to colleagues of all *ahem* skill levels.
+
+# AWS CodeStar
+
+AWS CodeStar is the 'Hello World' of a CI/CD pipeline, and is a great starting point for any new project. As it is not overly opinionated, it could easily be adapted or evolved to meet the professional needs or workflows of an individual developer or development team. For Alexa skill development, I think it's a little overkill, and may not be appropriate for beginners or non-developers who might be better off with the inline editor in the AWS Lambda console. Even for seasoned developers, this workflow out of the box is a little inefficient, as it requires a push to master and a build to finish to test on the device.
+Since the skill would be 'in development' until it's certified, it'd be nice to be able to test the skill on the device without having to push to master, or any branch for that matter.
+
+## Pros
+* Easiest project setup and workflow for developers
+  * GitHub or AWS CodeCommit repository created with template code
+  * Full blown managed CI/CD via AWS CodePipeline
+* Good for collaborating with others
+
+## Cons
+* Priciest option
+  * AWS CodeCommit, CodeBuild, and CodePipeline can incur additional costs
+* Manual steps for registering Lambda as an Alexa skill
+* By default, only master branch triggers builds
+  * Pipeline needs to be modified for custom workflow
+  * 'Dirty' code in master just feels bad, man
+* Overkill for simple projects
+* 'Slow' feedback loop since
+
+Here's the generated README:
+
 Welcome to the AWS CodeStar sample Alexa Skill
 ==============================================
 
 This sample code helps get you started with a simple skill built with the
 Amazon Alexa Skills Kit and deployed by AWS CloudFormation to AWS Lambda.
-This skill enables you to create a fact skill using facts about space. 
+This skill enables you to create a fact skill using facts about space.
 
 https://github.com/alexa/skill-sample-nodejs-fact
 
